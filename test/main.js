@@ -15,7 +15,7 @@ describe('DOM', () => {
 
 	it("should be able to create element via 'Component' class method", () => {
 		const component = new Component();
-		const divEl = component.createElement('div', 'wrapper', 'Lorem ipsum');
+		const divEl = component.createElement('div', 'wrapper', 'Some content');
 		document.body.appendChild(divEl);
 
 		const isDivElExist = !!document.querySelector('.wrapper');
@@ -24,14 +24,14 @@ describe('DOM', () => {
 
 	it("should be able to return element attribute data via 'Component' class method", () => {
 		const component = new Component();
-		const srcData = component.createElementAttribute('alt', 'drawer');
+		const altData = component.createElementAttribute('alt', 'drawer');
 
-		const expectedSrcData = {
+		const expectedAltData = {
 			name: 'alt',
 			value: 'drawer',
 		};
 
-		assert.deepEqual(srcData, expectedSrcData);
+		assert.deepEqual(altData, expectedAltData);
 	});
 
 	it("should be able to create header element via 'Header' class", () => {
